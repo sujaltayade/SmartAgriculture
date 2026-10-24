@@ -1,0 +1,364 @@
+
+/* =========================
+   1. Global Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f8f1;
+    color: #243328;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   2. Navigation Bar
+========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 18px 7%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 750;
+    color: #176b3a;
+}
+
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.navbar nav a {
+    color: #34483a;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #218c4b;
+}
+
+
+/* =========================
+   3. Hero Section
+========================= */
+
+.hero {
+    min-height: 410px;
+    padding: 80px 7%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, #e0f2d9, #f5faed);
+    border-bottom: 1px solid #dcebd6;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.tagline {
+    color: #218c4b;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 55px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #193b27;
+}
+
+.hero h1 span {
+    color: #238747;
+}
+
+.hero-content > p:not(.tagline) {
+    max-width: 650px;
+    color: #5b6c5e;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.hero-button {
+    display: inline-block;
+    background: #218c4b;
+    color: #ffffff;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-button:hover {
+    background: #176b3a;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   4. Main Content
+========================= */
+
+.container {
+    width: min(1100px, 90%);
+    margin: 50px auto;
+}
+
+.recommendation-card {
+    background: #ffffff;
+    padding: 35px;
+    margin-bottom: 35px;
+    border: 1px solid #e4ebdf;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(30, 70, 40, 0.06);
+    scroll-margin-top: 100px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 30px;
+}
+
+.icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #e8f6e8;
+    border-radius: 13px;
+    font-size: 29px;
+}
+
+.section-heading h2 {
+    font-size: 26px;
+    color: #214b2e;
+    margin-bottom: 4px;
+}
+
+.section-heading p {
+    color: #788579;
+    font-size: 14px;
+}
+
+
+/* =========================
+   5. Forms and Input Fields
+========================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #354b39;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #d5dfd2;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #26372a;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #218c4b;
+    box-shadow: 0 0 0 3px rgba(33, 140, 75, 0.12);
+}
+
+
+/* =========================
+   6. Submit Buttons
+========================= */
+
+.submit-button {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 28px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #218c4b;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #176b3a;
+    transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
+
+/* =========================
+   7. Prediction Result Boxes
+========================= */
+
+.result-box {
+    display: none;
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #edf8ed;
+    border: 1px solid #cce8cc;
+    color: #205c31;
+    font-size: 16px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.result-box.error {
+    background: #fff0ef;
+    border-color: #f2c8c4;
+    color: #a32920;
+}
+
+.result-box.show {
+    display: block;
+}
+
+
+/* =========================
+   8. Disclaimer
+========================= */
+
+.disclaimer {
+    margin-top: 20px;
+    padding: 13px 15px;
+    background: #fff9e8;
+    border-left: 4px solid #e4b33d;
+    border-radius: 5px;
+    color: #705d2e;
+    font-size: 13px;
+}
+
+
+/* =========================
+   9. Footer
+========================= */
+
+footer {
+    padding: 25px 7%;
+    background: #183d27;
+    color: #e5f1e7;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* =========================
+   10. Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 17px 5%;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 60px 6%;
+    }
+
+    .container {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .recommendation-card {
+        padding: 23px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-card {
+        padding: 18px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+}
